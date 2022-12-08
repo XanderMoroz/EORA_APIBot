@@ -24,7 +24,7 @@ def set_user_state(user_id, value):
 
 def send_to_database(chat_id, message):
     try:
-        requests.post('http://127.0.0.1:8000/tgmessage', json={'chat_id': chat_id, 'task': message})
+        requests.post('http://127.0.0.1:8000/tgmessage', json={'chat_id': chat_id, 'text': message})
         return chat_id, message
     except:
         return False

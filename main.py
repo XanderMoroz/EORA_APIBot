@@ -30,10 +30,10 @@ def root():
     return "Привет! Я сервис на FastAPI. Я сохраняю переписку с ботом CatOrBreadBot."
 
 @app.post("/tgmessage", response_model=schemas.TGMessage, status_code=status.HTTP_201_CREATED)
-def create_todo(tgmessage: schemas.TGMessageCreate, session: Session = Depends(get_session)):
+def create_message(tgmessage: schemas.TGMessageCreate, session: Session = Depends(get_session)):
 
     # create an instance of the TGMessage database model
-    tgmessagedb = models.TGMessage(chat_id = tgmessage.chat_id, task = tgmessage.task)
+    tgmessagedb = models.TGMessage(chat_id = tgmessage.chat_id, text = tgmessage.text)
 
     # add it to the session and commit it
     session.add(tgmessagedb)
@@ -46,7 +46,7 @@ def create_todo(tgmessage: schemas.TGMessageCreate, session: Session = Depends(g
 
 
 @app.get("/tgmessage/{id}", response_model=schemas.TGMessage)
-def read_todo(id: int):
+def read_message(id: int):
 
     # create a new database session
     session = SessionLocal()
@@ -65,7 +65,7 @@ def read_todo(id: int):
 
 
 @app.put("/tgmessage/{id}")
-def update_todo(id: int, chat_id: int, task: str):
+def update_message(id: int, chat_id: int, text: str):
 
     # create a new database session
     session = SessionLocal()
@@ -73,10 +73,10 @@ def update_todo(id: int, chat_id: int, task: str):
     # get the tgmessage item with the given id
     tgmessage = session.query(models.TGMessage).get(id)
 
-    # update tgmessage item with the given task (if an item with the given id was found)
+    # update tgmessage item with the given text (if an item with the given id was found)
     if tgmessage:
         tgmessage.chat_id = chat_id
-        tgmessage.task = task
+        tgmessage.text = text
         session.commit()
 
     # close the session
@@ -89,7 +89,7 @@ def update_todo(id: int, chat_id: int, task: str):
     return tgmessage
 
 @app.delete("/tgmessage/{id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_todo(id: int):
+def delete_message(id: int):
 
     # create a new database session
     session = SessionLocal()
@@ -107,8 +107,8 @@ def delete_todo(id: int):
 
     return None
 
-@app.get("/tgmessage", response_model = List[schemas.TGMessage])
-def read_todo_list():
+@app.get("/tgmessages", response_model = List[schemas.TGMessage])
+def read_message_list():
     # create a new database session
     session = SessionLocal()
 

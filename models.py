@@ -6,4 +6,4 @@ class TGMessage(Base):
     __tablename__ = 'tg_messages'
     id = Column(Integer, primary_key=True)
     chat_id = Column(Integer)
-    task = Column(String(256))
+    text = Column(String(256))
