@@ -31,7 +31,7 @@ Method | HTTP request | Description
 [**/create_message**] | **POST** /tgmessage | Добавление нового сообщения.
 [**/read_message**] | **GET** /tgmessage/{id} |  Извлечение сообщения по ID.
 [**/update_message**] | **PUT** /tgmessage/{id} | Редактирование сообщения по ID.
-[**/delete_message**] | **DELETE** /tgmessage/{id} | Извлечение, редактирование и удаление поста.
+[**/delete_message**] | **DELETE** /tgmessage/{id} | Удаление поста.
 [**/tgmessages**] | **GET** read_message_list | Извлечение всех сообщений списком.
 
 Исчерпывающую информацию по работе API можно получить после запуска по адресу http://127.0.0.1:8000/docs
