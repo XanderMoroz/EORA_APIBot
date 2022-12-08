@@ -60,7 +60,6 @@ pip install fastapi sqlalchemy telebot requests
 4. Запускаете API:
 ```sh
 uvicorn main:app --reload 
-cd ./Fan-game_service-board/
 ```
 5. Открываете второй терминал для запуска параллельного процесса. Переходите в директроию "telebot" и запускаете бота(CatOrBreadBot.py):
 ```sh
@@ -68,11 +67,7 @@ cd telebot
 
 python CatOrBreadBot.py  
 ```
-6. Запускаете сервер
-```sh
-python manage.py runserver
-```
-7. Общайтесь с ботом и накблюдайте работу сервиса. Бот доступен по адресу [BreadOrCatbot](https://t.me/BreadOrCatbot) Наслаждайтесь результатом)
+6. Общайтесь с ботом и накблюдайте работу сервиса. Бот доступен по адресу [BreadOrCatbot](https://t.me/BreadOrCatbot) Наслаждайтесь результатом)
 
 ## Лицензия
 
