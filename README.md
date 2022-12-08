@@ -1,4 +1,4 @@
-# EORA_APIBot (FastAPI + SQLAlchemy + pyTelegramBotApi)
+# EORA_APIBot (FastAPI + SQLAlchemy + Telebot)
 
 ## Описание проекта
 
