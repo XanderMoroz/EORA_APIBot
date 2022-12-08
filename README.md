@@ -1,4 +1,4 @@
-# EORA_APIBot
+# EORA_APIBot (FastAPI + SQLAlchemy + pyTelegramBotapi)
 
 ## Описание проекта
 
@@ -65,6 +65,7 @@ cd telebot
 
 python CatOrBreadBot.py  
 ```
+
 6. Общайтесь с ботом и наблюдайте работу сервиса. Наслаждайтесь результатом)
 
 ## Лицензия
